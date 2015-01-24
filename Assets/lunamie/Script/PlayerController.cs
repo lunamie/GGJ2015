@@ -11,18 +11,22 @@ public class PlayerController : Photon.MonoBehaviour {
 	
 	void Update () {
 		//自プレイヤーであるか評価
-		//if(photonView.isMine)
+		if(photonView.isMine)
 		{ 
 			//移動
 			float inputX = Input.GetAxis("Horizontal");
 			float inputY = Input.GetAxis("Vertical");
-			Vector2 force = new Vector2(inputX, inputY) * movePower;
-			//rigidbody2D.AddForce(force);
+
+			//transform.position +=  new Vector3(inputX, 0.0f, 0.0f) * 0.1;
+			transform.position = new Vector3(transform.position.x+inputX*0.1f, 0.0f, 0.0f);
+
+			//Vector3 force = new Vector3(inputX, inputY, 0.0f) * movePower;
+			//rigidbody.AddForce(force);
 			
 			//ジャンプ
-			//if(Input.GetButtonDown("Jump")) {
-			//	rigidbody2D.AddForce(Vector2.up * jumpPower);
-			//}
+			if(Input.GetButtonDown("Jump")) {
+				rigidbody.AddForce(Vector3.up * jumpPower);
+			}
 		}
 	}
 }

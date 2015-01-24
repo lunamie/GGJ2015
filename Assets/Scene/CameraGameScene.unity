@@ -1801,10 +1801,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 803320641}
   - 54: {fileID: 803320645}
-  - 65: {fileID: 803320644}
   - 114: {fileID: 803320643}
   - 114: {fileID: 803320642}
   - 114: {fileID: 803320646}
+  - 135: {fileID: 803320644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1861,8 +1861,8 @@ MonoBehaviour:
   viewIdField: 1
   instantiationId: 1
   isRuntimeInstantiated: 0
---- !u!65 &803320644
-BoxCollider:
+--- !u!135 &803320644
+SphereCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1871,7 +1871,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &803320645
 Rigidbody:
@@ -1886,7 +1886,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &803320646
 MonoBehaviour:
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 300
-  movePower: 100
+  movePower: 10
 --- !u!1 &816876872
 GameObject:
   m_ObjectHideFlags: 0
