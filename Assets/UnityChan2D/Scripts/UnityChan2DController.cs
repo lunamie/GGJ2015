@@ -14,6 +14,7 @@ public class UnityChan2DController : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private bool m_isGround;
     private const float m_centerY = 1.5f;
+	PhotonView m_PhotonView;
 
     private State m_state = State.Normal;
 
@@ -50,15 +51,25 @@ public class UnityChan2DController : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_boxcollier2D = GetComponent<BoxCollider2D>();
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+		m_PhotonView = GetComponent<PhotonView>();
+
+		PhotonNetwork.sendRate = 25;
+		PhotonNetwork.sendRateOnSerialize = 25;
     }
 
     void Update()
     {
-        if (m_state != State.Damaged)
+		if (m_state != State.Damaged && (m_PhotonView == null || PhotonNetwork.connected == false))
+		{
+			float x = Input.GetAxis("Horizontal");
+			bool jump = Input.GetButtonDown("Jump");
+			Move(x, jump);
+		}
+
+        if (m_state != State.Damaged && m_PhotonView.isMine == true)
         {
             float x = Input.GetAxis("Horizontal");
-            bool jump = Input.GetButtonDown("Jump");
-            Move(x, jump);
+            Move(x, false);
         }
 
 		if(transform.position.y < falling_treshhold) {
@@ -67,7 +78,24 @@ public class UnityChan2DController : MonoBehaviour
 			// reset the enemies
 			LevelManager.instance.resetLevel();
 		}
+
+		if(m_PhotonView.isMine == false && Input.GetButtonDown("Jump") && PhotonNetwork.connected) {
+			m_PhotonView.RPC( "DoJump", PhotonTargets.Others );
+		}
     }
+
+	[RPC]
+	public void DoJump()
+	{
+		m_animator.SetTrigger("Jump");
+		Move(0.0f, true);
+	}
+
+	[RPC]
+	public void animateMove(float move) {
+		m_animator.SetFloat("Horizontal", move);
+		m_animator.SetFloat("Vertical", m_rigidbody2D.velocity.y);
+	}
 
     void Move(float move, bool jump)
     {
@@ -81,7 +109,11 @@ public class UnityChan2DController : MonoBehaviour
 
         m_animator.SetFloat("Horizontal", move);
         m_animator.SetFloat("Vertical", m_rigidbody2D.velocity.y);
-        m_animator.SetBool("isGround", m_isGround);
+
+		if(PhotonNetwork.connected)
+			m_PhotonView.RPC("animateMove", PhotonTargets.Others, move);
+        
+		m_animator.SetBool("isGround", m_isGround);
 
         if (jump && m_isGround)
         {
@@ -185,10 +217,9 @@ public class UnityChan2DController : MonoBehaviour
 	}
 
 	void reset() {
-		// reset the player
-		GameObject tmp = this.gameObject;
-		GameObject player = (GameObject) Instantiate(playerPrefab, LevelManager.instance.startPosition, Quaternion.identity);
-		LevelManager.instance.player = player;
-		Destroy(tmp);
+		transform.position = LevelManager.instance.startPosition;
+		rigidbody2D.velocity = Vector2.zero;
+		rigidbody2D.angularVelocity = 0;
+		gameObject.SetActive(true);
 	}
 }
