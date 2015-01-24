@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class dummy : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
+public class MoveDoor : MonoBehaviour {
+	bool isOpen;
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }
