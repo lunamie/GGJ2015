@@ -8,7 +8,6 @@ public class Player : MonoBehaviour {
 	void Start() {
 		var pView = this.GetComponent<PhotonView>();
 		if( pView.isMine ) {
-			GameManager.Instance.nextScene = "scene_2";
 			GameManager.Instance.view = pView;
 		}
 		GameManager.Instance.playercnt++;

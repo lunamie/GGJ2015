@@ -44,6 +44,7 @@ public class GameManager : Photon.MonoBehaviour {
 		get;
 		set;
 	}
+	int sceneid = -1;
 
 	public void StageClear() {
 		Debug.Log( "Clear" );
@@ -51,6 +52,12 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	public void StageChange() {
+
+		if( sceneid != -1 ) {
+			PhotonNetwork.LoadLevel( sceneid );
+			sceneid = -1;
+			return;
+		}
 		PhotonNetwork.LoadLevel( nextScene );
 	}
 
@@ -60,6 +67,10 @@ public class GameManager : Photon.MonoBehaviour {
 
 	public void StageClear( string _name ) {
 		nextScene = _name;
+		StageClear();
+	}
+	public void StageClear( int id ) {
+		sceneid = id;
 		StageClear();
 	}
 }
