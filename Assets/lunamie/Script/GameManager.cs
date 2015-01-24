@@ -52,13 +52,16 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	public void StageChange() {
-
+		PhotonNetwork.LoadLevel( 1 );
+		/*
 		if( sceneid != -1 ) {
 			PhotonNetwork.LoadLevel( sceneid );
 			sceneid = -1;
 			return;
 		}
-		PhotonNetwork.LoadLevel( nextScene );
+		*/
+		return;
+		//PhotonNetwork.LoadLevel( nextScene );
 	}
 
 	void SendStageClear() {
