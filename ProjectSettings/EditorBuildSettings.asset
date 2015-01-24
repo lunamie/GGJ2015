@@ -6,22 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/EyeXDemos/GazeAware3D/GazeAware3DScene.unity
+    path: Assets/Scene/StartScene.unity
   - enabled: 1
-    path: Assets/EyeXDemos/ActivatableGUI/ActivatableGUIScene.unity
+    path: Assets/lunamie/Scene/scene_1.unity
   - enabled: 1
-    path: Assets/EyeXDemos/TraceEyeGaze/TraceEyeGazeScene.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/MapNavigation/MapNavigationScene.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/EyePosition/EyePositionScene.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/UserPresence/UserPresenceScene.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/GoalKeeper/GoalKeeper.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/FighterJet/FighterJet.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/Spotlight/SpotlightScene.unity
-  - enabled: 1
-    path: Assets/EyeXDemos/Calibration/Calibration.unity
+    path: Assets/lunamie/Scene/scene_2.unity
