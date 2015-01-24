@@ -17,16 +17,20 @@ public class PlayerController : Photon.MonoBehaviour {
 			float inputX = Input.GetAxis("Horizontal");
 			float inputY = Input.GetAxis("Vertical");
 
-			//transform.position +=  new Vector3(inputX, 0.0f, 0.0f) * 0.1;
-			transform.position = new Vector3(transform.position.x+inputX*0.1f, 0.0f, 0.0f);
+			//Debug.Log("photonView: " + photonView.isMine + " player.ID: " + PhotonNetwork.player.ID);
 
-			//Vector3 force = new Vector3(inputX, inputY, 0.0f) * movePower;
-			//rigidbody.AddForce(force);
+			// 位置移動でのテスト
+			//transform.position +=  new Vector3(inputX, 0.0f, 0.0f) * 0.1;
+			//transform.position = new Vector3(transform.position.x+inputX*0.1f, 0.0f, 0.0f);
+
+			// Physicsで移動する。
+			Vector3 force = new Vector3(movePower*inputX, 0.0f, 0.0f);
+			rigidbody.AddForce(force);
 			
 			//ジャンプ
-			if(Input.GetButtonDown("Jump")) {
-				rigidbody.AddForce(Vector3.up * jumpPower);
-			}
+			//if(Input.GetButtonDown("Jump")) {
+			//	rigidbody.AddForce(Vector3.up * jumpPower);
+			//}
 		}
 	}
 }
