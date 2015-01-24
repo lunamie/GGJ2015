@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 	public static LevelManager instance;
 	public GameObject[] enemies;
 	public GameObject player;
+	public Vector3 startPosition;
 
 	void Awake()  {
 		instance = this;
