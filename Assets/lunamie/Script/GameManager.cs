@@ -52,7 +52,10 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	public void StageChange() {
+#if UNITY_EDITOR
 		PhotonNetwork.LoadLevel( 1 );
+#endif
+		PhotonNetwork.LoadLevel( 2 );
 		/*
 		if( sceneid != -1 ) {
 			PhotonNetwork.LoadLevel( sceneid );
