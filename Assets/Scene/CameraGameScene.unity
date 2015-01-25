@@ -2703,6 +2703,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPower: 100
   movePower: 5
+  jumpVoices:
+  - {fileID: 8300000, guid: 7e1e32c51f4da464c97260039524fe15, type: 3}
+  - {fileID: 8300000, guid: 91c291b784ff846febdd7e04e295f4fa, type: 3}
+  - {fileID: 8300000, guid: ba673e88d1d3edb439ab5a7a7b754be8, type: 3}
 --- !u!114 &803320647
 MonoBehaviour:
   m_ObjectHideFlags: 0

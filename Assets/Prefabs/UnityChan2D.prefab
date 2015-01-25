@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7116789af0f9e44488988d9061c3eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageVoice: {fileID: 8300000, guid: 668a107660fa54fe98e03b698a09aa49, type: 3}
   jumpVoices:
   - {fileID: 8300000, guid: 7e1e32c51f4da464c97260039524fe15, type: 3}
   - {fileID: 8300000, guid: 91c291b784ff846febdd7e04e295f4fa, type: 3}
