@@ -10,6 +10,8 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 	static public GameManager GetInstance() {
 		if( instance == null ) {
+			instance = FindObjectOfType<GameManager>();
+			if( instance ) return instance;
 			GameObject obj = new GameObject( "GameManager" );
 			instance = obj.AddComponent<GameManager>();
 
@@ -18,10 +20,6 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	void Awake() {
-		if( instance != null ) {
-			Destroy( this.gameObject );
-			return;
-		}
 		instance = this;
 	}
 
@@ -44,7 +42,7 @@ public class GameManager : Photon.MonoBehaviour {
 		get;
 		set;
 	}
-	int sceneid = -1;
+	public int sceneid = -1;
 
 	public void StageClear() {
 		Debug.Log( "Clear" );
@@ -52,17 +50,19 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	public void StageChange() {
-		PhotonNetwork.LoadLevel( 2 );
-
-		/*
 		if( sceneid != -1 ) {
+			Debug.Log( "load" );
 			PhotonNetwork.LoadLevel( sceneid );
 			sceneid = -1;
+
+			PhotonNetwork.isMessageQueueRunning = true;
+
+
 			return;
 		}
-		*/
+		PhotonNetwork.LoadLevel( nextScene );
+		PhotonNetwork.isMessageQueueRunning = true;
 		return;
-		//PhotonNetwork.LoadLevel( nextScene );
 	}
 
 	void SendStageClear() {
@@ -71,10 +71,12 @@ public class GameManager : Photon.MonoBehaviour {
 
 	public void StageClear( string _name ) {
 		nextScene = _name;
+		sceneid = -1;
 		StageClear();
 	}
 	public void StageClear( int id ) {
 		sceneid = id;
+		nextScene = "";
 		StageClear();
 	}
 }

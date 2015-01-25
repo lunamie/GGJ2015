@@ -61,11 +61,17 @@ public class PlayerController : Photon.MonoBehaviour {
 	// 衝突コールバック
 	void OnCollisionEnter(Collision col)
 	{
+		if( col.gameObject.CompareTag("Finish"))
+		{
+			if( null != GameManager.GetInstance() )
+			{
+				GameManager.GetInstance().StageClear();
+			}
+			State = PlayerState.Idle;
+		}
+
 		/*
 		if( col.gameObject.CompareTag("Cube")) 
-		{
-		}
-		else if( col.gameObject.CompareTag("Goal"))
 		{
 		}
 		*/
