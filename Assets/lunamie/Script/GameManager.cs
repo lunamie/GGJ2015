@@ -7,8 +7,11 @@ public class GameManager : Photon.MonoBehaviour {
 	 * ステージ情報
 	 **/
 	readonly string[] stages ={
+		"CameraGameSceneLevel1",
+		"CameraGameSceneLevel2",
 		"CameraGameScene",
 		"SplitControlGameLevel1",
+		"SplitControlGameLevel2",
 	};
 
 
