@@ -30,16 +30,22 @@ public class GameManager : Photon.MonoBehaviour {
 		return instance;
 	}
 
+	GameObject stageClear_anim = null;
 
 	void Awake() {
 		if( instance ) {
 			if( instance != this ) Destroy( gameObject );
+			return;
 		}
 	}
 
 	void Start() {
 		this.gameObject.AddComponent<ConnectAndJoinRandom>();
 		DontDestroyOnLoad( gameObject );
+		stageClear_anim = Resources.Load( "StageClear" ) as GameObject;
+	}
+	void OnDestroy() {
+		if( this.stageClear_anim ) Resources.UnloadAsset( this.stageClear_anim );
 	}
 
 	public string nextScene {
@@ -58,7 +64,12 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 	public int sceneid = -1;
 
+	public void Login() {
+		SendStageClear();
+	}
+
 	public void StageClear() {
+		Instantiate( this.stageClear_anim );
 		Debug.Log( "Clear" );
 		SendStageClear();
 	}
@@ -70,7 +81,8 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	public void StageChange() {
-		FadeManager.Instance.FadeOut( 0.5f, 0f, () => {
+		FadeManager.Instance.FadeOut( 0.5f, 1.5f, () => {
+
 			Debug.Log( "stage_num=" + stageNum.ToString() );
 			if( stageNum >= stages.Length ) {
 				stageNum = 0;
@@ -80,7 +92,7 @@ public class GameManager : Photon.MonoBehaviour {
 			PhotonNetwork.LoadLevel( this.stages[ this.stageNum ] );
 			PhotonNetwork.isMessageQueueRunning = true;
 			this.stageNum++;
-			FadeManager.Instance.FadeIn( 0.5f, 0f );
+			FadeManager.Instance.FadeIn( 0.5f, 1.5f );
 		} );
 		/*
 		if( sceneid != -1 ) {
