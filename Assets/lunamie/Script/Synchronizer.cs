@@ -5,7 +5,7 @@ public class Synchronizer : Photon.MonoBehaviour {
 
 	private Vector3		receivePosition = Vector3.zero;
 	private Quaternion	receiveRotation = Quaternion.identity;
-	private Vector3		receiveVelocity = Vector3.zero;
+	//private Vector3		receiveVelocity = Vector3.zero;
 
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) 
 	{
@@ -30,9 +30,9 @@ public class Synchronizer : Photon.MonoBehaviour {
 	{
 		if( !photonView.isMine )
 		{
-			transform.position   = Vector3.Lerp(transform.position, receivePosition, Time.deltaTime * 10);
-			transform.rotation   = Quaternion.Lerp(transform.rotation, receiveRotation, Time.deltaTime * 10);
-			//rigidbody2D.velocity = Vector2.Lerp(rigidbody2D.velocity, receiveVelocity, Time.deltaTime * 10);
+			transform.position = Vector3.Lerp(transform.position, receivePosition, Time.deltaTime * 10);
+			transform.rotation = Quaternion.Lerp(transform.rotation, receiveRotation, Time.deltaTime * 10);
+			//rigidbody.velocity = Vector3.Lerp(rigidbody.velocity, receiveVelocity, Time.deltaTime * 10);
 		}
 	}
 
