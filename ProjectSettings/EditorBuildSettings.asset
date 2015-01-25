@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/lunamie/Scene/scene_2.unity
   - enabled: 1
     path: Assets/Scene/Credits.unity
+  - enabled: 1
+    path: Assets/Scene/SplitControlGameLevel2.unity

@@ -3,11 +3,17 @@ using System.Collections;
 
 public class GoalScript : MonoBehaviour {
 
-	public int nextLevel;
+	public string nextLevel;
 
 	void OnCollisionStay2D(Collision2D collisionInfo){
 		if(collisionInfo.collider.tag == "Player") {
-			Application.LoadLevel(nextLevel);
+			Debug.Log("start load level");
+			if(PhotonNetwork.connected == true) {
+				PhotonNetwork.automaticallySyncScene = true;
+				PhotonNetwork.LoadLevel( nextLevel );
+			} else {
+				Application.LoadLevel(nextLevel);
+			}
 		}
 	}
 }
