@@ -176,6 +176,7 @@ public class UnityChan2DController : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D other){
 		// Kill the player if he hits an enemy
 		if (other.collider.tag.Equals("Enemy")) {
+			Debug.Log("Hit from Enemy");
 			reset ();
 			
 			// reset the enemies
@@ -183,7 +184,7 @@ public class UnityChan2DController : MonoBehaviour
 		}
 		// Kill the enemy if the player hits the enemy damage part
 		if (other.collider.tag.Equals("EnemyDamage")) {
-			Debug.Log(other.gameObject.transform.name);
+			Debug.Log("Hit enemy"+other.gameObject.transform.name);
 			other.gameObject.transform.GetComponent<EnemyBehaviour>().dealDamage();
 		}
 		
