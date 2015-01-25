@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+// Hong Linh Thai
+// Script which moves Unity Chan in the title screen
+
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public class TitleUnityChanMovement : MonoBehaviour {
 

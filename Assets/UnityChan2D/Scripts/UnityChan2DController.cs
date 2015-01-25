@@ -1,5 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
+
+// Hong Linh Thai 
+// modified version of the original unityChan2DControler
+
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public class UnityChan2DController : MonoBehaviour
 {
@@ -131,15 +135,6 @@ public class UnityChan2DController : MonoBehaviour
 
         m_isGround = Physics2D.OverlapArea(groundCheck + groundArea, groundCheck - groundArea, whatIsGround);
         m_animator.SetBool("isGround", m_isGround);
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.tag == "DamageObject" && m_state == State.Normal)
-        {
-            m_state = State.Damaged;
-            StartCoroutine(INTERNAL_OnDamage());
-        }
     }
 
     IEnumerator INTERNAL_OnDamage()

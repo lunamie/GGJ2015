@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Hong Linh Thai
+// Script which creates the Sound when Unity Chan is jumping or hurt
+
 [RequireComponent(typeof(UnityChan2DController), typeof(AudioSource))]
 public class UnityChanSound : MonoBehaviour {
 
