@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Hong Linh Thai
+// Script which sets the camera to follow UnityChan
+
 public class CameraFollowScript : MonoBehaviour {
 
 	public float distance;

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Hong Linh Thai 
+// Script for controling the enemies
+
 public class EnemyBehaviour : MonoBehaviour {
 
 	public float Speed;

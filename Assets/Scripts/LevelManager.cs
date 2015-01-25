@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// Hong Linh Thai
+// Script which manages the level, e.g. reset the enemies 
+
 public class LevelManager : MonoBehaviour {
 
 	public static LevelManager instance;

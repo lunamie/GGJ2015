@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Hong Linh Thai
+// Depricated script for controling the player
+
 public class MovementScript2D : MonoBehaviour {
 
 	public float Speed;

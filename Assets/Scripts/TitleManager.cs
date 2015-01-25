@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Hong Linh Thai
+// Script which processes the input
+
 public class TitleManager : MonoBehaviour {
 
 	void Awake() {
