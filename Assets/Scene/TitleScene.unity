@@ -293,6 +293,7 @@ GameObject:
   - 224: {fileID: 644611469}
   - 222: {fileID: 644611471}
   - 114: {fileID: 644611470}
+  - 95: {fileID: 644611472}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -329,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: .544117689, g: .544117689, b: .544117689, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 025dd04cabfc64bfc8094b98f02d2774, type: 3}
     m_FontSize: 20
@@ -349,6 +350,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 644611468}
+--- !u!95 &644611472
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644611468}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eed7c7ac93d00ce49bee114f80a161f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &655544448
 GameObject:
   m_ObjectHideFlags: 0
