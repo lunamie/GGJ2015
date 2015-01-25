@@ -66,15 +66,16 @@ public class GameManager : Photon.MonoBehaviour {
 
 
 	public void StageChange() {
-		Debug.Log( "stage_num=" + stageNum.ToString() );
-		if( stageNum >= stages.Length ) {
-			stageNum = 0;
-			Application.LoadLevel( "TitleScene" );
-			return;
-		}
-		PhotonNetwork.LoadLevel( this.stages[ this.stageNum ] );
-		PhotonNetwork.isMessageQueueRunning = true;
-		this.stageNum++;
+
+			Debug.Log( "stage_num=" + stageNum.ToString() );
+			if( stageNum >= stages.Length ) {
+				stageNum = 0;
+				Application.LoadLevel( "TitleScene" );
+				return;
+			}
+			PhotonNetwork.LoadLevel( this.stages[ this.stageNum ] );
+			PhotonNetwork.isMessageQueueRunning = true;
+			this.stageNum++;
 		/*
 		if( sceneid != -1 ) {
 			Debug.Log( "load" );
@@ -93,7 +94,8 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	void SendStageClear() {
-		view.RPC( "RecvStageClear", PhotonTargets.All );
+		if( PhotonNetwork.isMasterClient )
+			view.RPC( "RecvStageClear", PhotonTargets.All );
 	}
 
 	public void StageClear( string _name ) {
