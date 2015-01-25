@@ -107,6 +107,6 @@ public class PlayerController : Photon.MonoBehaviour {
 	void PlaySoundClient() {
 		int i = Random.Range(0, jumpVoices.Length);
 		audioSource.Stop();
-		audioSource.PlayOneShot(jumpVoices[i])
+		audioSource.PlayOneShot(jumpVoices[i]);
 	}
 }
