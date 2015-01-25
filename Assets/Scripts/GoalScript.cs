@@ -9,8 +9,8 @@ public class GoalScript : MonoBehaviour {
 		if(collisionInfo.collider.tag == "Player") {
 			Debug.Log("start load level");
 			if(PhotonNetwork.connected == true) {
-				PhotonNetwork.automaticallySyncScene = true;
-				PhotonNetwork.LoadLevel( nextLevel );
+				GameManager.Instance.StageClear();
+	
 			} else {
 				Application.LoadLevel(nextLevel);
 			}

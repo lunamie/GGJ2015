@@ -2,6 +2,18 @@
 using ExitGames.Client.Photon;
 
 public class GameManager : Photon.MonoBehaviour {
+
+	/**
+	 * ステージ情報
+	 **/
+	readonly string[] stages ={
+		"CameraGameScene",
+		"SplitControlGameLevel1",
+		"SplitControlGameLevel2"
+	};
+
+
+
 	static private GameManager instance = null;
 	static public GameManager Instance {
 		get {
@@ -19,8 +31,11 @@ public class GameManager : Photon.MonoBehaviour {
 		return instance;
 	}
 
+
 	void Awake() {
-		instance = this;
+		if( instance ) {
+			if( instance != this ) Destroy( gameObject );
+		}
 	}
 
 	void Start() {
@@ -49,7 +64,18 @@ public class GameManager : Photon.MonoBehaviour {
 		SendStageClear();
 	}
 
+
 	public void StageChange() {
+		Debug.Log( "stage_num=" + stageNum.ToString() );
+		if( stageNum >= stages.Length ) {
+			stageNum = 0;
+			Application.LoadLevel( "TitleScene" );
+			return;
+		}
+		PhotonNetwork.LoadLevel( this.stages[ this.stageNum ] );
+		PhotonNetwork.isMessageQueueRunning = true;
+		this.stageNum++;
+		/*
 		if( sceneid != -1 ) {
 			Debug.Log( "load" );
 			PhotonNetwork.LoadLevel( sceneid );
@@ -63,6 +89,7 @@ public class GameManager : Photon.MonoBehaviour {
 		PhotonNetwork.LoadLevel( nextScene );
 		PhotonNetwork.isMessageQueueRunning = true;
 		return;
+		 */
 	}
 
 	void SendStageClear() {
@@ -84,6 +111,9 @@ public class GameManager : Photon.MonoBehaviour {
 		get;
 		set;
 	}
+
+
+	int stageNum;
 
     public virtual void OnConnectedToMaster()
     {
