@@ -595,15 +595,14 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 3
+  synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 53884559}
+  ObservedComponents: []
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 1
+  instantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!1 &54406582
 GameObject:
@@ -2607,6 +2606,7 @@ GameObject:
   - 114: {fileID: 803320646}
   - 135: {fileID: 803320644}
   - 114: {fileID: 803320647}
+  - 82: {fileID: 803320648}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2653,15 +2653,14 @@ MonoBehaviour:
   group: 0
   prefixBackup: -1
   observed: {fileID: 0}
-  synchronization: 3
+  synchronization: 0
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 803320642}
+  ObservedComponents: []
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 2
+  instantiationId: 2
   isRuntimeInstantiated: 0
 --- !u!135 &803320644
 SphereCollider:
@@ -2701,8 +2700,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c0ba68db68c7a4aa730eefd58ce57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPower: 300
-  movePower: 10
+  jumpPower: 100
+  movePower: 5
+  jumpVoices:
+  - {fileID: 8300000, guid: 7e1e32c51f4da464c97260039524fe15, type: 3}
+  - {fileID: 8300000, guid: 91c291b784ff846febdd7e04e295f4fa, type: 3}
+  - {fileID: 8300000, guid: ba673e88d1d3edb439ab5a7a7b754be8, type: 3}
 --- !u!114 &803320647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2714,7 +2717,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dca0ab10669541d2a8a36b555f7858b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rid: {fileID: 803320645}
+  rid: {fileID: 0}
+--- !u!82 &803320648
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803320640}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &808280663
 GameObject:
   m_ObjectHideFlags: 0

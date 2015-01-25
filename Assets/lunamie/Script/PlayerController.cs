@@ -17,7 +17,12 @@ public class PlayerController : Photon.MonoBehaviour {
 	public float InputX { get; set; }
 	//public float InputY { get: set; }
 
+	[SerializeField]
+	private AudioClip[] jumpVoices;
+	private AudioSource audioSource;
+
 	void Start () {
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
@@ -34,7 +39,8 @@ public class PlayerController : Photon.MonoBehaviour {
 			if( Input.GetButtonDown("Jump") ) 
 			{
 				rigidbody.AddForce( Vector3.up * jumpPower );
-				
+				PlayJumpSound();
+
 				State = PlayerState.Jump;
 			}
 			else
@@ -87,5 +93,20 @@ public class PlayerController : Photon.MonoBehaviour {
 				State = PlayerState.Idle;
 			}
 		}
+	}
+
+	void PlayJumpSound()
+	{
+		int i = Random.Range(0, jumpVoices.Length);
+		audioSource.Stop();
+		audioSource.PlayOneShot(jumpVoices[i]);
+		PhotonNetwork.RPC("PlaySoundClient", PhotonTargets.Others );
+	}
+
+	[RPC]
+	void PlaySoundClient() {
+		int i = Random.Range(0, jumpVoices.Length);
+		audioSource.Stop();
+		audioSource.PlayOneShot(jumpVoices[i])
 	}
 }
