@@ -157,8 +157,13 @@ public class UnityChan2DController : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
         }
-        m_animator.SetTrigger("Invincible Mode");
-        m_state = State.Invincible;
+		m_animator.SetTrigger("Invincible Mode");
+		m_state = State.Invincible;
+
+		reset ();
+		
+		// reset the enemies
+		LevelManager.instance.resetLevel();
     }
 
     void OnFinishedInvincibleMode()
@@ -177,10 +182,9 @@ public class UnityChan2DController : MonoBehaviour
 		// Kill the player if he hits an enemy
 		if (other.collider.tag.Equals("Enemy")) {
 			Debug.Log("Hit from Enemy");
-			reset ();
-			
-			// reset the enemies
-			LevelManager.instance.resetLevel();
+
+			m_state = State.Damaged;
+			StartCoroutine(INTERNAL_OnDamage());
 		}
 		// Kill the enemy if the player hits the enemy damage part
 		if (other.collider.tag.Equals("EnemyDamage")) {
@@ -222,5 +226,6 @@ public class UnityChan2DController : MonoBehaviour
 		rigidbody2D.velocity = Vector2.zero;
 		rigidbody2D.angularVelocity = 0;
 		gameObject.SetActive(true);
+		m_state = State.Normal;
 	}
 }
