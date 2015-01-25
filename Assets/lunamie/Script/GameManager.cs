@@ -9,7 +9,6 @@ public class GameManager : Photon.MonoBehaviour {
 	readonly string[] stages ={
 		"CameraGameScene",
 		"SplitControlGameLevel1",
-		"SplitControlGameLevel2"
 	};
 
 
@@ -64,9 +63,14 @@ public class GameManager : Photon.MonoBehaviour {
 		SendStageClear();
 	}
 
+	void Update() {
+		if( PhotonNetwork.inRoom && Input.GetKeyDown( KeyCode.Alpha0 ) ) {
+			StageClear();
+		}
+	}
 
 	public void StageChange() {
-
+		FadeManager.Instance.FadeOut( 0.5f, 0f, () => {
 			Debug.Log( "stage_num=" + stageNum.ToString() );
 			if( stageNum >= stages.Length ) {
 				stageNum = 0;
@@ -76,6 +80,8 @@ public class GameManager : Photon.MonoBehaviour {
 			PhotonNetwork.LoadLevel( this.stages[ this.stageNum ] );
 			PhotonNetwork.isMessageQueueRunning = true;
 			this.stageNum++;
+			FadeManager.Instance.FadeIn( 0.5f, 0f );
+		} );
 		/*
 		if( sceneid != -1 ) {
 			Debug.Log( "load" );
