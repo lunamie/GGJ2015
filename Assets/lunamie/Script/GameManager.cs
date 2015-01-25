@@ -70,7 +70,7 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	public void StageChange() {
-
+		FadeManager.Instance.FadeOut( 0.5f, 0f, () => {
 			Debug.Log( "stage_num=" + stageNum.ToString() );
 			if( stageNum >= stages.Length ) {
 				stageNum = 0;
@@ -80,6 +80,8 @@ public class GameManager : Photon.MonoBehaviour {
 			PhotonNetwork.LoadLevel( this.stages[ this.stageNum ] );
 			PhotonNetwork.isMessageQueueRunning = true;
 			this.stageNum++;
+			FadeManager.Instance.FadeIn( 0.5f, 0f );
+		} );
 		/*
 		if( sceneid != -1 ) {
 			Debug.Log( "load" );
