@@ -79,4 +79,37 @@ public class GameManager : Photon.MonoBehaviour {
 		nextScene = "";
 		StageClear();
 	}
+
+	public string ConnectLog {
+		get;
+		set;
+	}
+
+    public virtual void OnConnectedToMaster()
+    {
+		ConnectLog = "サーバーに接続成功 ロビーに接続中...";
+	}
+
+    public virtual void OnPhotonRandomJoinFailed()
+    {
+		ConnectLog = "joinに失敗";
+	}
+
+    // the following methods are implemented to give you some context. re-implement them as needed.
+
+    public virtual void OnFailedToConnectToPhoton(DisconnectCause cause)
+    {
+		ConnectLog = "Cause: " + cause;
+    }
+
+    public void OnJoinedRoom()
+    {
+		ConnectLog = "roomに接続成功";
+	}
+
+    public void OnJoinedLobby()
+    {
+		ConnectLog = "ロビーに接続成功 roomに接続中...";
+	}
+
 }
