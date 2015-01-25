@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efecb7e36320742ababe6f70f1a68aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayer: 1
+  maxPlayer: 2
 --- !u!4 &899191147
 Transform:
   m_ObjectHideFlags: 0
@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d220bd0327b6a455ea7e85c654152b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneid: -1
 --- !u!114 &1310840402
 MonoBehaviour:
   m_ObjectHideFlags: 0
