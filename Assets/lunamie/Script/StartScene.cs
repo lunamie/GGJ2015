@@ -9,7 +9,6 @@ public class StartScene : MonoBehaviour {
 	UILabel label;
 
 	void Awake() {
-		GameManager.Instance.sceneid = 2;
 		GameManager.Instance.ConnectLog = "サーバーに接続中...";
 	}
 	// Update is called once per frame
@@ -17,7 +16,7 @@ public class StartScene : MonoBehaviour {
 		label.text = GameManager.Instance.ConnectLog;
 		
 		if( GameManager.Instance.playercnt >= maxPlayer ) {
-			GameManager.Instance.StageClear(  );
+			GameManager.Instance.Login( );
 			this.enabled = false;
 		}
 	}
