@@ -8,5 +8,8 @@ public class TitleManager : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Space)) {
 			Application.LoadLevel("StartScene");
 		}
+		if(Input.GetKeyDown(KeyCode.C)){
+			Application.LoadLevel("Credits");
+		}
 	}
 }
