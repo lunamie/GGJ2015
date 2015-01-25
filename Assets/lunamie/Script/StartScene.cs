@@ -17,8 +17,8 @@ public class StartScene : MonoBehaviour {
 		label.text = GameManager.Instance.ConnectLog;
 		
 		if( GameManager.Instance.playercnt >= maxPlayer ) {
-			GameManager.Instance.StageClear( 2 );
-			gameObject.SetActive( false );
+			GameManager.Instance.StageClear(  );
+			this.enabled = false;
 		}
 	}
 }
