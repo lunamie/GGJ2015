@@ -78,7 +78,7 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 158142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 8899711}
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6158142, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 8899709}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -106,7 +106,7 @@ BoxCollider2D:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 8899709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.75, z: 0}
@@ -285,10 +285,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -316,7 +316,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -748,14 +748,6 @@ Prefab:
       propertyPath: instantiationId
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
   m_RootGameObject: {fileID: 971633821}
@@ -1176,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7116789af0f9e44488988d9061c3eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageVoice: {fileID: 0}
+  damageVoice: {fileID: 8300000, guid: 668a107660fa54fe98e03b698a09aa49, type: 3}
   jumpVoices:
   - {fileID: 8300000, guid: 7e1e32c51f4da464c97260039524fe15, type: 3}
   - {fileID: 8300000, guid: 91c291b784ff846febdd7e04e295f4fa, type: 3}
@@ -1407,10 +1399,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -1438,7 +1430,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -1491,8 +1483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333af7340bd59f747b24288c7c768a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
-  MaxSpeed: 7
+  Speed: 5
+  MaxSpeed: 5
 --- !u!61 &784138279
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1691,14 +1683,6 @@ Prefab:
       propertyPath: instantiationId
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
   m_RootGameObject: {fileID: 974204844}
@@ -1753,10 +1737,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -1784,7 +1768,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -1837,8 +1821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333af7340bd59f747b24288c7c768a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
-  MaxSpeed: 7
+  Speed: 5
+  MaxSpeed: 5
 --- !u!61 &971633826
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1926,10 +1910,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -1957,7 +1941,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -2010,8 +1994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333af7340bd59f747b24288c7c768a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
-  MaxSpeed: 7
+  Speed: 5
+  MaxSpeed: 5
 --- !u!61 &974204848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2080,7 +2064,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 158144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1007053263}
@@ -2101,7 +2085,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 198.317307, y: 1.79697466, z: 0}
@@ -2115,7 +2099,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11458820, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2125,10 +2109,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -2156,7 +2140,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -2176,7 +2160,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11458822, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2202,21 +2186,21 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 333af7340bd59f747b24288c7c768a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
-  MaxSpeed: 7
+  Speed: 5
+  MaxSpeed: 5
 --- !u!61 &1007053267
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6158144, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -2228,7 +2212,7 @@ Rigidbody2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 5058142, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_Mass: 1
   m_LinearDrag: 0
@@ -2244,7 +2228,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21258142, guid: 2ba698d0f435dae41ac3916b9ede1c0a,
     type: 2}
-  m_PrefabInternal: {fileID: 1794633713}
+  m_PrefabInternal: {fileID: 1518574221}
   m_GameObject: {fileID: 1007053262}
   m_Enabled: 1
   m_CastShadows: 0
@@ -2311,10 +2295,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -2342,7 +2326,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -2395,8 +2379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333af7340bd59f747b24288c7c768a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
-  MaxSpeed: 7
+  Speed: 5
+  MaxSpeed: 5
 --- !u!61 &1007314059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2659,14 +2643,6 @@ Prefab:
       propertyPath: instantiationId
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
   m_RootGameObject: {fileID: 1925609902}
@@ -2843,14 +2819,6 @@ Prefab:
       propertyPath: instantiationId
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
   m_RootGameObject: {fileID: 1007314054}
@@ -2903,17 +2871,61 @@ Prefab:
       propertyPath: instantiationId
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
   m_RootGameObject: {fileID: 784138274}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &1518574221
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 198.317307
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.79697466
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458822, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: viewIdField
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458822, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+      propertyPath: instantiationId
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
+  m_RootGameObject: {fileID: 1007053262}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &1528275761
@@ -3226,66 +3238,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
---- !u!1001 &1794633713
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 198.317307
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.79697466
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 458144, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458822, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: viewIdField
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458822, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: instantiationId
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: Speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458142, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-      propertyPath: MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2ba698d0f435dae41ac3916b9ede1c0a, type: 2}
-  m_RootGameObject: {fileID: 1007053262}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1870077803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,10 +3376,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -3455,7 +3407,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -3508,8 +3460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333af7340bd59f747b24288c7c768a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 7
-  MaxSpeed: 7
+  Speed: 5
+  MaxSpeed: 5
 --- !u!61 &1925609906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3623,10 +3575,10 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 2
+    TeleportIfDistanceGreaterThan: 1
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 10
+    InterpolateLerpSpeed: 15
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -3654,7 +3606,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
