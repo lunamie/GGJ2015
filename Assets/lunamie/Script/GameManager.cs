@@ -43,6 +43,7 @@ public class GameManager : Photon.MonoBehaviour {
 	}
 
 	void Start() {
+		Time.captureFramerate = 60;
 		this.gameObject.AddComponent<ConnectAndJoinRandom>();
 		DontDestroyOnLoad( gameObject );
 		stageClear_anim = Resources.Load( "StageClear" ) as GameObject;
