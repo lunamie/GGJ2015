@@ -11,7 +11,7 @@ public class CameraFollowScript : MonoBehaviour {
 	}
 
 	public void Update() {
-		transform.position = new Vector3(LevelManager.instance.player.transform.position.x, LevelManager.instance.player.transform.position.y-1, -distance);
+		transform.position = new Vector3(LevelManager.instance.player.transform.position.x, LevelManager.instance.player.transform.position.y+1, -distance);
 	}
 
 
